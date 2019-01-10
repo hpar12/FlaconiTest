@@ -71,7 +71,7 @@ public class BuyPerfumeStepDefinition {
 	public void close_the_browser() {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-		// driver.close();
+		driver.close();
 
 	}
 }
