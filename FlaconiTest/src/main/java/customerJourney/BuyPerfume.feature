@@ -8,7 +8,7 @@ When the user selects the perfume link
 And chooses a perfume that he wishes to buy
 Then the user successfully able to buy the perfume
 
-@BuyPerfume1
+@BuyPerfume
 Scenario: Search for a brand of perfume in the search box 
 
 Given user in on Flaconi website

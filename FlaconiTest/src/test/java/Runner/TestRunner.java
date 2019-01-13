@@ -20,7 +20,7 @@ import cucumber.api.junit.Cucumber;
 		// definition file
 		dryRun = false, // to check the mapping is proper between feature file
 						// and step def file)
-		tags = { "@BuyPerfume1" })
+		tags = { "@BuyPerfume, @AddToCart" })
 
 public class TestRunner {
 
