@@ -17,6 +17,12 @@ public class HomePage {
 	@FindBy(css = "#main-navigation > ul > li:nth-child(2) > a")
 	public WebElement btn_ParfumLink;
 
+	// @FindBy(css = "#login-link > span:nth-child(2)")
+	// public WebElement btn_Login;
+
+	@FindBy(css = "#login-link > span.ico-account")
+	public WebElement btn_LogIn;
+
 	@FindBy(css = "body > div.cookie-box > div > a > span")
 	public WebElement btn_CloseCookiesMessageBox;
 
@@ -26,13 +32,19 @@ public class HomePage {
 	@FindBy(css = "#autosuggest-form-header > button")
 	public WebElement btn_SearchSubmit;
 
-	public void perform_Search(String search) {
-		// driver.navigate().to("http://shop.demoqa.com/?s=" + search +
-		// "&post_type=product");
+	@FindBy(css = "#ProductFeedWidget > div.sc-bbmXgH.cwzxIL > div > button.sc-jqCOkK.eDBGjH")
+	public WebElement btn_BeautyBazaarParfum;
+
+	public void btn_CloseCookiesMessageBox() {
+		btn_CloseCookiesMessageBox.click();
 	}
 
 	public void navigateTo_HomePage() {
 		driver.get("https://www.flaconi.de");
 	}
+
+	// public void btn_ParfumLink() {
+	// btn_ParfumLink.click();
+	// }
 
 }

@@ -1,10 +1,14 @@
-#Feature: User wants to view the cart
-#
-#Scenario: View selected item in the cart Test Scenario
-#
-#Given user has added a perfume to the cart
-#When the user wants to view the cart
-#Then clicks on the view cart icon
-#Then the selected perfume is displayed in the cart
-#Then close the browser
-#
+Feature: User adds perfume to the cart
+@Tag3
+Scenario: Choosing a perfume from the beauty bazaar  
+
+Given user launches the Flaconi website 
+When the user selects perfume for women 
+Then the perfume is added to the cart
+
+@Tag4
+Scenario: User logs in and buys a perfume
+
+Given user logs into flaconi website
+When the user selects a perfume 
+Then the perfume is added to the cart 
