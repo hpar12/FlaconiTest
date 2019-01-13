@@ -14,7 +14,30 @@ public class ViewCartPage {
 	@FindBy(css = "#to-checkout-btn-1")
 	public WebElement btn_Checkout;
 
-	@FindBy(css = "#continue-shopping-btn-2")
+	@FindBy(xpath = "//*[@id='continue-shopping-btn-1']")
 	public WebElement btn_ContinueShopping;
+
+	@FindBy(css = "#htmlData > div.footer.row > div > a")
+	public WebElement btn_CheckoutMiniCartPopup;
+
+	@FindBy(name = "#date_of_birth")
+	public WebElement btn_DateOfBirthField;
+
+	public void btn_CheckoutMiniCartPopup() {
+		btn_CheckoutMiniCartPopup.click();
+	}
+
+	public void btn_ContinueShopping() {
+		btn_ContinueShopping.click();
+	}
+
+	public void btn_DateOfBirthField() {
+		btn_DateOfBirthField.click();
+		btn_DateOfBirthField.sendKeys("10.04.1998");
+	}
+
+	public void btn_Checkout() {
+		btn_Checkout.click();
+	}
 
 }

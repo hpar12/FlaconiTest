@@ -17,8 +17,11 @@ public class HomePage {
 	@FindBy(css = "#main-navigation > ul > li:nth-child(2) > a")
 	public WebElement btn_ParfumLink;
 
-	// @FindBy(css = "#login-link > span:nth-child(2)")
-	// public WebElement btn_Login;
+	@FindBy(css = "#mini-basket > a > span.ico-basket")
+	public WebElement btn_CartIcon;
+
+	@FindBy(css = "body > div.wrapper.off-canvas-wrap > div.inner-wrap.row-collapse > div > header > div.main-header.clearer > div.logo > a")
+	public WebElement btn_FlaconiIcon;
 
 	@FindBy(css = "#login-link > span.ico-account")
 	public WebElement btn_LogIn;
@@ -43,8 +46,21 @@ public class HomePage {
 		driver.get("https://www.flaconi.de");
 	}
 
-	// public void btn_ParfumLink() {
-	// btn_ParfumLink.click();
-	// }
+	public void btn_SearchSubmit() {
+		btn_SearchSubmit.click();
+
+	}
+
+	public void btn_SearchBox() {
+		btn_SearchBox.sendKeys("dior");
+	}
+
+	public void btn_ParfumLink() {
+		btn_ParfumLink.click();
+	}
+
+	public void btn_CartIcon() {
+		btn_CartIcon.click();
+	}
 
 }
