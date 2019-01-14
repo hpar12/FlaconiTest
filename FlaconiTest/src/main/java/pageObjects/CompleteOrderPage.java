@@ -25,16 +25,9 @@ public class CompleteOrderPage {
 
 	@FindBy(css = "#loginSubmit")
 	public WebElement btn_LoginSubmit;
-	//
-	// @FindBy(css = "#date_of_birth")
-	// public WebElement btn_DateOfBirth;
 
 	@FindBy(css = "#button-primary__text")
 	public WebElement btn_CompleteOrderContinue;
-
-	// public void userDateOfBirth() {
-	// btn_DateOfBirth.sendKeys("10.04.1990");
-	// }
 
 	public void loginUserOrderPage() {
 		btn_LoginEmail.sendKeys("harifun2k@gmail.com");

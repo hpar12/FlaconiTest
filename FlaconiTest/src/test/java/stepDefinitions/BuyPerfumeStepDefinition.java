@@ -54,7 +54,7 @@ public class BuyPerfumeStepDefinition {
 		home.btn_SearchSubmit();
 	}
 
-	@Then("^chooses the perfume she wishes to buy$")
+	@And("^chooses the perfume she wishes to buy$")
 	public void chooses_the_perfume_she_wishes_to_buy() {
 		driver.findElement(By.cssSelector(
 				"body > div.wrapper.off-canvas-wrap > div.inner-wrap.row-collapse > div > div.content > div > div.category-products.columns.small-12.medium-8.large-9.pull-right > div.dior-shop__catalog > div:nth-child(2) > div > div > div.slick-list.draggable > div > div:nth-child(2) > a > img"))
@@ -62,15 +62,8 @@ public class BuyPerfumeStepDefinition {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 
-	@Then("^navigates back to the home page$")
-	public void navigates_back_to_the_home_page() {
-		home = new HomePage(driver);
-		home.btn_FlaconiIcon.click();
-		driver.close();
-	}
-
-	@Then("^the user successfully able to buy the perfume$")
-	public void the_user_successfully_able_to_buy_the_perfume() {
+	@Then("^the user is successfully able to buy the perfume$")
+	public void the_user_is_successfully_able_to_buy_the_perfume() {
 		driver.findElement(By.xpath("//*[@title='In den Warenkorb']")).click();
 		viewCartPage = new ViewCartPage(driver);
 		viewCartPage.btn_CheckoutMiniCartPopup();
@@ -82,43 +75,8 @@ public class BuyPerfumeStepDefinition {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Assert.assertEquals("Sie wurden erfolgreich eingeloggt.",
 				driver.findElement(By.cssSelector("#flash-messenger > div > div")).getText());
-		// viewCartPage.btn_DateOfBirthField();
-
-		// Assert.assertTrue(driver
-		// .findElement(By.cssSelector(
-		// "#buy-button-next > span > div > div:nth-child(1) > button > div >
-		// div:nth-child(2)"))
-		// .isDisplayed());
 		driver.close();
 
-	}
-
-	@Then("^the user completes the transaction$")
-	public void the_user_completes_the_transaction() {
-		driver.findElement(By.xpath("//*[@title='In den Warenkorb']")).click();
-		driver.findElement(By.cssSelector("#htmlData >div.footer.row > div > a")).click();
-		viewCartPage = new ViewCartPage(driver);
-		viewCartPage.btn_Checkout.click();
-		completeOrderPage = new CompleteOrderPage(driver);
-		completeOrderPage.btn_AlreadyFlacnoniCustomer.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		completeOrderPage.loginUserOrderPage();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		Assert.assertEquals("Sie wurden erfolgreich eingeloggt.",
-				driver.findElement(By.cssSelector("#flash-messenger > div > div")).getText());
-		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//*[@id='date_of_birth'][@type='tel']")).sendKeys("10.04.1998");
-
-		// *[@id='Email'][@name='Email']
-
-		// completeOrderPage.btn_CompleteOrderContinue.click();
-		// driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		// completeOrderPage.userDateOfBirth();
-		Assert.assertTrue(driver
-				.findElement(By.cssSelector(
-						"#buy-button-next > span > div > div:nth-child(1) > button > div > div:nth-child(2)"))
-				.isEnabled());
-		driver.close();
 	}
 
 }

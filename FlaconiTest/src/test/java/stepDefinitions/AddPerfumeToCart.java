@@ -37,10 +37,8 @@ public class AddPerfumeToCart {
 	public void the_user_selects_perfume_for_women() {
 		home = new HomePage(driver);
 		home.btn_ParfumLink();
-		driver.findElement(By.cssSelector(
-				"body > div.wrapper.off-canvas-wrap > div.inner-wrap.row-collapse > div > div.content > div.row > aside > div > ul > li.active > ul > li:nth-child(1) > a"))
-				.click();
-		driver.findElement(By.xpath("//*[@title='Lancôme La vie est belle Eau de Parfum']")).click();
+		home.btn_WomansPerfume();
+		home.btn_SelectedWomanPerfume();
 	}
 
 	@And("^adds it to the cart$")
@@ -76,8 +74,7 @@ public class AddPerfumeToCart {
 	public void the_user_selects_a_perfume() {
 		home = new HomePage(driver);
 		home.btn_ParfumLink.click();
-		driver.findElement(By.xpath("//*[@title='Lancôme La vie est belle Eau de Parfum']")).click();
-
+		home.btn_SelectedPerfume();
 	}
 
 	@Then("^checks to see if the perfume selected is in the cart$")

@@ -38,6 +38,15 @@ public class HomePage {
 	@FindBy(css = "#ProductFeedWidget > div.sc-bbmXgH.cwzxIL > div > button.sc-jqCOkK.eDBGjH")
 	public WebElement btn_BeautyBazaarParfum;
 
+	@FindBy(css = "body > div.wrapper.off-canvas-wrap > div.inner-wrap.row-collapse > div > div.content > div.row > aside > div > ul > li.active > ul > li:nth-child(1) > a")
+	public WebElement btn_WomansPerfume;
+
+	@FindBy(xpath = "//*[@title='Lancôme La vie est belle Eau de Parfum']")
+	public WebElement btn_SelectedWomanPerfume;
+
+	@FindBy(xpath = "//*[@title='Lancôme La vie est belle Eau de Parfum']")
+	public WebElement btn_SelectedPerfume;
+
 	public void btn_CloseCookiesMessageBox() {
 		btn_CloseCookiesMessageBox.click();
 	}
@@ -61,6 +70,18 @@ public class HomePage {
 
 	public void btn_CartIcon() {
 		btn_CartIcon.click();
+	}
+
+	public void btn_WomansPerfume() {
+		btn_WomansPerfume.click();
+	}
+
+	public void btn_SelectedWomanPerfume() {
+		btn_SelectedWomanPerfume.click();
+	}
+
+	public void btn_SelectedPerfume() {
+		btn_SelectedPerfume.click();
 	}
 
 }
