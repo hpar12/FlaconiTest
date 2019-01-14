@@ -17,4 +17,25 @@ public class CompleteOrderPage {
 	@FindBy(css = "#showLoginForm")
 	public WebElement btn_AlreadyFlacnoniCustomer;
 
+	@FindBy(css = "#loginEmail")
+	public WebElement btn_LoginEmail;
+
+	@FindBy(css = "#loginPassword")
+	public WebElement btn_LoginPassword;
+
+	@FindBy(css = "#loginSubmit")
+	public WebElement btn_LoginSubmit;
+
+	@FindBy(css = "#button-primary__text")
+	public WebElement btn_CompleteOrderContinue;
+
+	public void loginUserOrderPage() {
+		btn_LoginEmail.sendKeys("harifun2k@gmail.com");
+		btn_LoginPassword.sendKeys("wipro@123");
+		btn_LoginSubmit.click();
+	}
+
+	public void btn_AlreadyFlacnoniCustomer() {
+		btn_AlreadyFlacnoniCustomer.click();
+	}
 }
